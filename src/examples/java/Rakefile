@@ -1,0 +1,25 @@
+require 'rake/clean'
+
+CLEAN.include 'class'
+
+JAVA_TO_CLASS = '%{src,class}d/%n.class'
+
+JAVA_FILES = FileList['src/**/*.java']
+CLASS_FILES = JAVA_FILES.pathmap(JAVA_TO_CLASS)
+
+task :run => :compile do
+  sh 'java -cp class org.onestepback.Client'
+end
+
+task :default => :compile
+
+directory "class"
+
+task :compile => CLASS_FILES
+
+JAVA_FILES.each do |java_file|
+  class_file = java_file.pathmap(JAVA_TO_CLASS)
+  file class_file => ["class", java_file] do
+    sh "javac -Xlint:-deprecation -cp class -d class #{java_file}"
+  end
+end

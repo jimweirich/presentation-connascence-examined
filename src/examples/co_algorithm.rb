@@ -1,0 +1,4 @@
+
+<%= link_to "Create Page", "/pages;new" %>
+<%= link_to "Create Page", "/pages/new" %>
+<%= link_to "Create Page", new_pages_path %>

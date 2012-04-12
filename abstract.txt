@@ -1,0 +1,9 @@
+TITLE: Connascence Examined
+
+ABSTRACT:
+
+Connascence (noun) is defined as (1) the common birth of two or more at the same tome; production of two or more together, (2) That which is born or produced with another, or (3) the act of growing together.
+
+In software, connascence is a rough measurement of the amount of coupling amount the components of a software system.  Components that are "born" together will often need to change together over time.  Excessive connascence in our software means that the system is hard to change and hard to maintain.
+
+At least that's the theory.  How well does connascence hold up as a measurement tool in evaluating real software? In this talk, we will examine two different architectures for a common web application and evaluate each with respect to the amount of connascence and coupling in the system.
